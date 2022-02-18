@@ -1,0 +1,36 @@
+/* body {
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: #555;
+  }
+h1,h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+    color: #333;
+  }
+
+#PLab3{     // # antes del nombre para llamar un ID 
+    color:midnightblue;
+}
+
+.question{      // . antes del nombre para llamar a una clase 
+    background: #eee;
+    padding: .5em;      // Lo hace un poco más grueso
+} 
+
+header {
+    background-color: rgb(143, 142, 142);
+    background-image: url("Back.JPG");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    line-height: 1;
+    padding: 10vw 2em;
+    text-align: center;
+  } */
+
+  body{margin:0 auto;max-width:50em;font-family:Helvetica,Arial,sans-serif;line-height:1.5;padding:4em 1em;color:#555}h1,h2{margin-top:1em;padding-top:1em;color:#333}#PLab3{color:#191970}.question{background:#eee;padding:.5em}header{background-color:#8f8e8e;background-image:url("Back.JPG");background-position:center top;background-repeat:no-repeat;background-size:contain;line-height:1;padding:10vw 2em;text-align:center}
+ 
