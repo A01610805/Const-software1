@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <header>
-        <link rel="stylesheet" href="Lab3.css">
+        <link rel="stylesheet" href="Lab3.css"> 
         <h1>Laboratorio 1</h1>
         <h2>Jose Antonio López
             A01610805</h2>
@@ -140,10 +140,32 @@
                 <p><i>Porque, al reducir el tamaño del código, facilitamos a nuestro navegador su descarga.</i></p>
         </section>
 
-        <p id = "resultados"></p>    <!--Intentando echar a jalar el js-->
+        <section id="PLab4">    <!-- Se utiliza el ID para darle formato en el archivo css --> 
+            <h2>Preguntas Lab 4</h2>
+            <ul>
+                <li class="question"><b>¿Qué diferencias y semejanzas hay entre Java y JavaScript? </b></li>
+                <p><i>Ambos tienen una sintaxis muy parecida, y son muy utilizados en aplicaciones web. Sin embargo, existen muchas diferencias entre ellos. JavaScript fue creado específicamente para agregar dinamismo a las páginas web; no necesita compilador alguno, y es capaz de manejar datos de fecha y tiempo. Java, por otro lado, es un lenguaje orientado a objetos (al igual que c++), y es más estricto en cuanto a su sintaxis. 
+                    Otra gran diferencia es que Java es un lenguaje capaz de ser ejecutado por si solo, mientras que JavaScript tiene que complementarse con un código HTML. 
+                    </i></p>
+
+                <li class="question"><b>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)  </b></li>
+                <p><i>.getMonth, .getHours, .getFullYear, .getMinutes, .getSeconds
+                    </i></p>
+
+                <li class="question"><b>¿Qué métodos tienen los arreglos? (Menciona al menos 5*) </b></li>
+                <p><i>.toString(), .pop(), .push(), .shift(), .length</i></p>
+
+                <li class="question"><b> ¿Cómo se declara una variable con alcance local dentro de una función? </b></li>
+                <p><i>Utilizando la palabra reservada “let”</i></p>
+
+                <li class="question"><b>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</b></li>
+                <p><i>Es probable que queramos utilizar el mismo nombre para otra variable más adelante, lo que provocaría una modificación no deseada al valor anteriormente asignado a dicha variable.</i></p>
+        </section>
+
+       <!--  <p id = "ej3"></p>    Intentando echar a jalar el js-->
+        <script src = "Lab4.js"></script> 
 
         <footer>
-            <p><small>Contacto: A01610805@tec.mx</small></p>
             <p><small><b>Bibliografía:</b> <br>
             <ul><i>
             <li>HTTP response status codes - HTTP | MDN. (2022). Retrieved 17 February 2022, from https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</li>
@@ -152,10 +174,9 @@
             <li>Cómo estructurar un formulario HTML - Aprende sobre desarrollo web | MDN. (2022). Retrieved 17 February 2022, from https://developer.mozilla.org/es/docs/Learn/Forms/How_to_structure_a_web_form</li>
             </i> </ul>
             </small></p>
+            <p><small>Contacto: A01610805@tec.mx</small></p>
             <p> <br> Para el desarrollo de este laboratorio se utilizó <a href="https://code.visualstudio.com/">Visual Studio Code. </a></p> 
         </footer>
-
-        <script src = "prueba.js"></script>
     </body>
 
 </html>
