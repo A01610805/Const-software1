@@ -4,15 +4,16 @@ const { Console } = require('console');
 //fs: filesystem
 const filesystem = require('fs');
 
-filesystem.writeFileSync('hola.txt', 'Hola desde node');        //Escribimos 'hola desde node' dentro del archivo 'hola.txt'
+//filesystem.writeFileSync('hola.txt', 'Hola desde node');        //Escribimos 'hola desde node' dentro del archivo 'hola.txt'
 
 const arreglo = [60, 90, 100, 10, 20, 0, 120, 2000, 340, 1000, 50];
 
+// Ejercicio 1: función para sacar promedios
 function prom(x){
     let promedio = 0;
     let suma = 0;
     let count = 0;
-    for (let item of x) {     //Se crea automáticamente una fila priorizada por tiempos, lo que ordena el arreglo.
+    for (let item of x) {
         suma += item;
         count += 1;
     }
@@ -22,6 +23,16 @@ function prom(x){
 
 let promedio = prom(arreglo);
 console.log(promedio);
+
+
+//Ejercicio 2: función que recibe string y lo escribe en un txt
+function escribe(str){
+    filesystem.writeFileSync('ejercicio2.txt', str);
+}
+
+escribe('Hello world');
+
+
 
 const http = require('http');
 
