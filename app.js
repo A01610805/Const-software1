@@ -1,4 +1,6 @@
-console.log("hola desde node");
+//Laboratorio 8
+//Jose Antonio López
+//A01610805
 
 const { Console } = require('console');
 //fs: filesystem
@@ -20,7 +22,6 @@ function prom(x){
     promedio = suma/count;
     return promedio;
 }
-
 let promedio = prom(arreglo);
 console.log(promedio);
 
@@ -29,10 +30,17 @@ console.log(promedio);
 function escribe(str){
     filesystem.writeFileSync('ejercicio2.txt', str);
 }
-
 escribe('Hello world');
 
 
+//Ejercicio 3: Tabla de cuadrados y cubos
+
+function cuad_cubos(n) {
+    for (let i = 1; i <= n; i++){
+        console.log(i + " " + i*i + " " + i*i*i);
+    }
+}
+cuad_cubos(4);
 
 const http = require('http');
 
