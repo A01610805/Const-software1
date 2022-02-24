@@ -44,7 +44,7 @@ cuad_cubos(4);
 
 const http = require('http');
 
-filesystem.readFile('Lab1.html', function (err, html) {     //Función para abrir un archivo HTML
+filesystem.readFile('Labs5y6.html', function (err, html) {     //Función para abrir un archivo HTML
     if (err){
         throw err;
     }
