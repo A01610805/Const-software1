@@ -8,22 +8,31 @@ filesystem.writeFileSync('hola.txt', 'Hola desde node');        //Escribimos 'ho
 
 const arreglo = [60, 90, 100, 10, 20, 0, 120, 2000, 340, 1000, 50];
 
-for (let item of arreglo) {     //Se crea automáticamente una fila priorizada por tiempos, lo que ordena el arreglo.
-    setTimeout(() => {
-        console.log(item);
-    }, item);
+function prom(x){
+    let promedio = 0;
+    let suma = 0;
+    let count = 0;
+    for (let item of x) {     //Se crea automáticamente una fila priorizada por tiempos, lo que ordena el arreglo.
+        suma += item;
+        count += 1;
+    }
+    promedio = suma/count;
+    return promedio;
 }
+
+let promedio = prom(arreglo);
+console.log(promedio);
 
 const http = require('http');
 
-const server = http.createServer( (request,response) => {
+/*const server = http.createServer( (request,response) => {
     console.log(request);       //solicita todos los datos del request. para algo en específico, usar request.'lo_que_necesites' (ejemplo: request.url)
     response.setHeader('Content-Type', 'text/html');    //para preparar la respuesta.
     response.write("<!DOCTYPE html><html><header><link rel='stylesheet' href='Lab3.css'> <h1>Laboratorio 1</h1><h2>Jose Antonio Lopez <br> A01610805</h2></header>");     // aqui hay que poner el head de un archivo HTML
     response.end();     //Para enviar la respuesta.
 });
 
-server.listen(3000);
+server.listen(3000);*/
 
 
 
