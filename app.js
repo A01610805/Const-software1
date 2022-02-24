@@ -44,6 +44,19 @@ cuad_cubos(4);
 
 const http = require('http');
 
+filesystem.readFile('Lab1.html', function (err, html) {     //Función para abrir un archivo HTML
+    if (err){
+        throw err;
+    }
+    http.createServer(function(request, response) {
+        response.writeHeader(200, {'Content-Type': 'text/html'});
+        response.write(html);
+        response.end();
+    })
+.listen(3000);
+});
+
+
 /*const server = http.createServer( (request,response) => {
     console.log(request);       //solicita todos los datos del request. para algo en específico, usar request.'lo_que_necesites' (ejemplo: request.url)
     response.setHeader('Content-Type', 'text/html');    //para preparar la respuesta.
