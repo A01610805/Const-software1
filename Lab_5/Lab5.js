@@ -4,7 +4,9 @@ function descripcion(){
     materialize.innerHTML = "Material design es un framework responsivo muy amigable que nos ayuda a diseñar páginas web con mucha más facilidad que si lo hiciéramos de cero. Consiste en una serie de funciones predefinidas escritas en CSS y JS, que podemos personalizar y utilizar dentro de nuestro código.";  //Le otorgamos valores a la imagen
 }
 
-function preguntas(){}
+function preguntas(){
+
+}
 
 const carrito = new Array (); 
 
@@ -64,7 +66,7 @@ function mostrar_carrito() {
     let iva_bajo = subtotal_bajo * .16;
     let total_bajo = subtotal_bajo + iva_bajo;    
 
-    document.getElementById("carrito").innerHTML = "<table><thead><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>IVA</th><th>Total</th></tr></thead><tbody> <tr> <td>Guitarra Electroacustica</td><td>" + cant_acusticas + "</td><td>$" + subtotal_ac + "</td><td>$" + iva_ac + "</td><td>$" + total_ac + "</td></tr><tr><td>Guitarra Electrica</td><td>" + cant_electricas + "</td><td>$" + subtotal_el + "</td><td>$" + iva_el + "</td><td>$" + total_el + "</td><tr> <td>Bajo Electrico</td><td>" + cant_bajos + "</td><td>$" + subtotal_bajo + "</td><td>$" + iva_bajo + "</td><td>$" + total_bajo + "</td></tr>"; // Aqui va la tabla escrita en HTML 
+    document.getElementById("carrito").innerHTML = "<table><thead><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>IVA</th><th>Total</th></tr></thead><tbody> <tr> <td>Guitarra Electroacustica</td><td>" + cant_acusticas + "</td><td>$" + subtotal_ac + "</td><td>$" + iva_ac + "</td><td>$" + total_ac + "</td></tr><tr><td>Guitarra Electrica</td><td>" + cant_electricas + "</td><td>$" + subtotal_el + "</td><td>$" + iva_el + "</td><td>$" + total_el + "</td><tr> <td>Bajo Electrico</td><td>" + cant_bajos + "</td><td>$" + subtotal_bajo + "</td><td>$" + iva_bajo + "</td><td>$" + total_bajo + "</td></tr> <tr> <td><strong>Total</td><td>" + (cant_acusticas + cant_electricas + cant_bajos) + "</td><td>$" + (subtotal_ac + subtotal_el + subtotal_bajo) + "</td><td>$" + (iva_ac + iva_el + iva_bajo) + "</td><td>$" + (total_ac + total_el + total_bajo) + "</strong></td></tr>"; // Aqui va la tabla escrita en HTML 
 
         verCarrito.onclick = ocultar_carrito;
     }
