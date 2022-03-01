@@ -1,0 +1,23 @@
+{
+  "name": "labs",
+  "version": "1.0.0",
+  "description": "Código de los laboratorios de clase",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A01610805/Const-software1.git"
+  },
+  "author": "Jose Antonio López",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/A01610805/Const-software1/issues"
+  },
+  "homepage": "https://github.com/A01610805/Const-software1#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
