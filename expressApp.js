@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser'); 
 
 //Middleware: un software que va enmedio
 app.use((request, response, next) => {
