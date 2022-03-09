@@ -5,16 +5,16 @@
 
 
 <div class="row">       <!--Se divide la página en 3 partes dentro del grid, para poner las 3 tarjetas alineadas-->
-    <% if (instrumentos_array.length > 0) { %>     <!-- // Tenemos acceso automático a instrumentos_array -->
+    <% if (instrumentos.length > 0) { %>     <!-- // Tenemos acceso a instrumentos_array porque se envía desde el controller -->
         <ul>
-        <% for (let inst of instrumentos_array) { %>
+        <% for (let inst of instrumentos) { %>
         <div class="col l3 m4 s12">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fst3.depositphotos.com%2F4897955%2F14447%2Fv%2F950%2Fdepositphotos_144479889-stock-illustration-musical-instruments-design-set-monochrome.jpg&f=1&nofb=1">
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4"><%=inst %><i class="material-icons right">more_vert</i></span>
+                    <span class="card-title activator grey-text text-darken-4"><%=inst.nombre %><i class="material-icons right">more_vert</i></span>
                 </div>
             </div>
         </div>
