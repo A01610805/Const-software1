@@ -24,6 +24,12 @@
             <h3>Por el momento no contamos con ningun instrumento.</h3>
     <% } %>
 </div>
+<div id="ultimo_inst">
+    <% if (ultimo_instrumento != '') { %>
+        <p> El instrumento más recientemente agregado fue: <%= ultimo_instrumento %></p> 
+        <br>
+   <% } %>
+</div> 
 
 
   <%-include('includes/foot.ejs')%>

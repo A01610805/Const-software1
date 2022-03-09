@@ -14,8 +14,11 @@
     <nav>
         <div class="nav-wrapper">
           <a href="#" class="brand-logo center">Laboratorios</a>
-         <a href="#" id = "verCarrito"><i class="material-icons right">shopping_cart</i></a> 
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if (username != '') { %>
+            <li><%= username %></li>
+            <li><a href="/users/logout">Salir</a></li>
+          <% } %>
           </ul>
         </div>
       </nav>

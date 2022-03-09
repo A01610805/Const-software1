@@ -1,19 +1,26 @@
 const path = require('path');
-const Instrumento = require('../models/instrumento');
-const instrumentModel = require('../models/instrumento');       // para poder acceder al archivo donde guardamos los instrumentos
+const Instrumento = require('../models/instrumento');       // para poder acceder al archivo donde guardamos los instrumentos
 
-exports.listaInst = (request, response, next) => {
-    response.render('lista', {instrumentos: instrumentModel.fetchAll()});   
-};
 
 exports.get_nuevo = (request, response, next) => {
-    response.render('nuevo');   // se envía el archivo "nuevo.ejs"
+    // se envía el archivo "nuevo.ejs"
+    response.render('nuevo', {
+        username: request.session.username ? request.session.username: ''   // Se adjunta el username para poder ponerlo en el head
+    });
 }
 
 exports.post_nuevo = (request, response, next) => {
     const instrumento = new Instrumento(request.body.nombre);   // Se crea un nuevo objeto "instrumento" con el nombre ingresado por el usuario
     instrumento.save();
-    response.redirect('/instrumentos');
+    response.setHeader('Set-Cookie', 'ultimo_instrumento='+instrumento.nombre+'; HttpOnly');
+    response.redirect('/musica/instrumentos');
+};
+
+exports.listaInst = (request, response, next) => {
+    response.render('lista', {
+        instrumentos: Instrumento.fetchAll(),
+        username: request.session.username ? request.session.username: '',
+        ultimo_instrumento: request.cookies.ultimo_instrumento ? request.cookies.ultimo_instrumento : ''});   
 };
 
 exports.inicio = (request, response, next) => {

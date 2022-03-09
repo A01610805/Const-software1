@@ -4,7 +4,7 @@
   "description": "Código de los laboratorios de clase",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon Lab12.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
