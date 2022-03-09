@@ -31,7 +31,7 @@ const server = http.createServer( (request, response) => {
         response.write('</head><body>');
         response.write('<h1 id="guitarras">Este sitio es para ingresar nuevos instrumentos</h1>');
         response.write('<form action="nuevo" method="POST"');   //esto te envía directamente al siguiente request al hacer click en "enviar"
-        response.write('<label for=nombre">Nombre del instrumento: </label>');
+        response.write('<label for="nombre">Nombre del instrumento: </label>');
         response.write('<input type="text" id="nombre" name="nombre" placeholder="violín">');
         response.write('<br><br>');
         response.write('<input type="submit" value="Enviar">');
@@ -83,3 +83,20 @@ const server = http.createServer( (request, response) => {
 )
 
 server.listen(3000);
+
+
+
+/* Lab 14; esto va en controller.js
+
+// Esto va en Lab12.js, junto con app.use bodyParser.
+app.use(cookieParser());
+app.use(session({
+    secret: 'uytrfvbnioi76543wsdcvsr45rtgbjki987yhnbvcd', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
+
+// Para utilizar las variables de sesión en un controlador
+Request.session.nombre_variable = valor;
+
+*/

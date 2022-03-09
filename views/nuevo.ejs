@@ -1,0 +1,13 @@
+<%- include('includes/head.ejs')%>
+
+<h3 id="guitarras">Este sitio es para ingresar nuevos instrumentos</h3>
+<br><br>
+<form action="nuevo" method="POST"><label for="nombre"><h6>Nombre del instrumento:</h6> </label>
+    <input type="text"id="nombre" name="nombre" placeholder="Violín"><br><br><input type="submit" value="Enviar">
+</form>
+<br><br>
+<a href="/instrumentos">Regresar a la lista de instrumentos</a>
+<br><br>
+
+<%- include('includes/foot.ejs')%>
+</body>

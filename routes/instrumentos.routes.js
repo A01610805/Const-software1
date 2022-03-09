@@ -4,17 +4,18 @@ const router = express.Router();
 
 const instrumentos_array = ["Guitarra", "Piano", "Saxofón"];
 
-
+router.get('/instrumentos', (request, response, next) => {
+    //response.sendFile(path.join(__dirname, '..', 'views', 'Lab12.html')); Para enviar un archivo HTML
+    response.render('lista', {instrumentos_array});
+});
 
 router.get('/nuevo', (request, response, next) => {
-    let respuesta = ('<!DOCTYPE html><html lang="es-mx"><head><meta charset="utf-8"><title>Nuevo Instrumento</title></head><body><h1 id="guitarras">Este sitio es para ingresar nuevos instrumentos</h1><form action="nuevo" method="POST" <label for=nombre">Nombre del instrumento: </label><input type="text" id="nombre" name="nombre" placeholder="Violín"><br><br><input type="submit" value="Enviar"></form><br><br><a href="/">Regresar a la lista de instrumentos</a></body>');
-    response.send(respuesta); 
+    response.render('nuevo');   // se envía el archivo "nuevo.ejs"
 });
 
 router.post('/nuevo', (request, response, next) => {
-    console.log(request.body);
     instrumentos_array.push(request.body.nombre);
-    response.redirect('/');
+    response.redirect('/instrumentos');
 });
 
 router.get('/', (request, response, next) => {
@@ -22,7 +23,7 @@ router.get('/', (request, response, next) => {
     for (let i in instrumentos_array) {
     respuesta += '<li>' + instrumentos_array[i] + '</li>';
     }
-    respuesta += '</ul><br><br><a href="nuevo">Agregar un instrumento</a><br><br></body></html>';
+    respuesta += '</ul><br><br><a href="instrumentos">Ver instrumentos</a><br><br></body></html>';
     response.send(respuesta);
 });
 

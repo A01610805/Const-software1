@@ -3,11 +3,9 @@ const app = express();
 const bodyParser = require('body-parser'); 
 app.use(bodyParser.urlencoded({extended: false}));
 
-const misRutas = require('./routes/instrumentos.routes');
+const misRutas = require('../routes/instrumentos.routes');
 
 app.use('/', misRutas);
-
-// app.use(express.static(path.join(__dirname, 'public')));    // damos acceso directo a la carpeta "public". Lab12
 
 // Middleware: un software que va enmedio
 app.use((request, response, next) => {
