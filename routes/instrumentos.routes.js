@@ -7,6 +7,7 @@ router.get('/instrumentos', instrumentosController.listaInst);
 router.get('/nuevo', instrumentosController.get_nuevo);
 router.post('/nuevo', instrumentosController.post_nuevo);
 router.get('/', instrumentosController.inicio);
+router.get('/:ID_instrumento', instrumentosController.filtrar);   // Para filtrar los instrumentos
 router.use('/', instrumentosController.error);
 
 module.exports = router;

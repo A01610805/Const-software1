@@ -10,18 +10,42 @@ exports.get_nuevo = (request, response, next) => {
 }
 
 exports.post_nuevo = (request, response, next) => {
-    const instrumento = new Instrumento(request.body.nombre);   // Se crea un nuevo objeto "instrumento" con el nombre ingresado por el usuario
-    instrumento.save();
-    response.setHeader('Set-Cookie', 'ultimo_instrumento='+instrumento.nombre+'; HttpOnly');
-    response.redirect('/musica/instrumentos');
+    const instrumento = new Instrumento(request.body.nombre, request.body.tipo, request.body.descripcion, request.body.imagen);   // Se crea un nuevo objeto "instrumento" con el nombre ingresado por el usuario
+    instrumento.save()
+        .then(() => {
+            response.setHeader('Set-Cookie', 'ultimo_instrumento='+instrumento.nombre+'; HttpOnly');
+            response.redirect('/musica/instrumentos');
+        })
+        .catch( err => console.log(err));
 };
 
 exports.listaInst = (request, response, next) => {
-    response.render('lista', {
-        instrumentos: Instrumento.fetchAll(),
-        username: request.session.username ? request.session.username: '',
-        ultimo_instrumento: request.cookies.ultimo_instrumento ? request.cookies.ultimo_instrumento : ''});   
+Instrumento.fetchAll()
+    .then(([rows, fieldData]) => {   // Lo que queremos que ocurra cuando la promesa se cumple
+        response.render('lista', {
+            instrumentos: rows,
+            username: request.session.username ? request.session.username: '',
+            ultimo_instrumento: request.cookies.ultimo_instrumento ? request.cookies.ultimo_instrumento : ''
+        });   
+    })
+    .catch(err => {     // Lo que queremos que ocurra si la promesa no se cumple
+        console.log(err);
+    });
 };
+
+exports.filtrar = (request, response, next) => {
+    Instrumento.fetchOne(request.params.ID_instrumento)//Modificar
+        .then(([rows, fieldData]) => {   // Lo que queremos que ocurra cuando la promesa se cumple
+            response.render('lista', {
+                instrumentos: rows,
+                username: request.session.username ? request.session.username: '',
+                ultimo_instrumento: request.cookies.ultimo_instrumento ? request.cookies.ultimo_instrumento : ''
+            });   
+        })
+        .catch(err => {     // Lo que queremos que ocurra si la promesa no se cumple
+            console.log(err);
+        });
+    };
 
 exports.inicio = (request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'views', 'inicio.html'));
@@ -32,3 +56,12 @@ exports.error = (request, response, next) => {
     let respuesta = ('<!DOCTYPE html><html><head><title>Instrumentos | Not Found</title></head><body><h1 id="404">Este sitio no existe, amigo.</h1></body>');
     response.send(respuesta);
 };
+
+/*
+ .then(([rows, fieldData]) => {   // Lo que queremos que ocurra cuando la promesa se cumple
+            console.log(rows);
+        })
+        .catch(err => {     // Lo que queremos que ocurra si la promesa no se cumple
+            console.log(err);
+        }
+        */

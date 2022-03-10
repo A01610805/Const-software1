@@ -2,11 +2,23 @@
 
 <h3 id="guitarras">Este sitio es para ingresar nuevos instrumentos</h3>
 <br><br>
-<form action="nuevo" method="POST"><label for="nombre"><h6>Nombre del instrumento:</h6> </label>
-    <input type="text"id="nombre" name="nombre" placeholder="Violín"><br><br><input type="submit" value="Enviar">
+<form action="nuevo" method="POST">
+    <label for="nombre"><h6>Nombre del instrumento:</h6> </label>
+    <input type="text"id="nombre" name="nombre" placeholder="Violín">
+
+    <label for="tipo"><h6>Tipo de instrumento:</h6> </label>
+    <input type="text"id="tipo" name="tipo" placeholder="Instrumento de viento">
+
+    <label for="descripcion"><h6>Descripción:</h6> </label>
+    <input type="text"id="descripcion" name="descripcion" placeholder="Es un instrumento...">
+
+    <label for="imagen"><h6>Imagen:</h6> </label>
+    <input type="text"id="imagen" name="imagen" placeholder="link de la imagen">
+    <br><br>
+    <input type="submit" value="Enviar">
 </form>
 <br><br>
-<a href="/instrumentos">Regresar a la lista de instrumentos</a>
+<a href="/musica/instrumentos">Regresar a la lista de instrumentos</a>
 <br><br>
 
 <%- include('includes/foot.ejs')%>
