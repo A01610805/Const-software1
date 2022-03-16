@@ -22,6 +22,6 @@ module.exports = class Instrumento {
     }
 
     static fetchOne(ID_instrumento) {
-        return db.execute('SELECT * FROM Instrumento WHERE id=?', [ID_instrumento]);
+        return db.execute('SELECT * FROM Instrumentos WHERE id=?', [ID_instrumento]);
     }
 }

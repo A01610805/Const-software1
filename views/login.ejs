@@ -4,6 +4,7 @@
     <h4>Introduce tus datos de acceso para ingresar:</h4>
 
     <form action="/users/login" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>"> <!--Protección csrf-->
         <label for="username">Usuario: </label>
         <input type="text" id="username" name="username" placeholder="Antonio">
         <label for="password">Contraseña: </label>

@@ -1,6 +1,6 @@
 const path = require('path');
 const Instrumento = require('../models/instrumento');       // para poder acceder al archivo donde guardamos los instrumentos
-
+const User = require('../models/user');
 
 exports.get_nuevo = (request, response, next) => {
     // se envía el archivo "nuevo.ejs"
