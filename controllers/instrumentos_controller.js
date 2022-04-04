@@ -57,6 +57,18 @@ exports.error = (request, response, next) => {
     response.send(respuesta);
 };
 
+exports.buscar = (request, response, next) => {
+    console.log(request.params.valor);
+    Instrumento.fetch(request.params.valor)
+    .then(([rows, fieldData]) => {
+        console.log(rows);
+        response.status(200).json(rows);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+}
+
 /*
  .then(([rows, fieldData]) => {   // Lo que queremos que ocurra cuando la promesa se cumple
             console.log(rows);

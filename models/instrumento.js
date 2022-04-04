@@ -24,4 +24,8 @@ module.exports = class Instrumento {
     static fetchOne(ID_instrumento) {
         return db.execute('SELECT * FROM Instrumentos WHERE id=?', [ID_instrumento]);
     }
+
+    static fetch(valor) {
+        return db.execute("SELECT * FROM Instrumentos WHERE nombre LIKE ?", ['%'+valor+'%']);    // Podemos modificar la consulta para que busque también en descripción y otros campos
+    }
 }

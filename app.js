@@ -14,13 +14,17 @@ app.set('view engine', 'ejs');  // Para que funcionen correctamente los archivos
 app.set('views', 'views');
 
 app.use(express.static(path.join(__dirname, 'public')));    // damos acceso directo a la carpeta "public".
+
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 app.use(cookieParser());
 app.use(session({
     secret: 'bjuytrfgbvwertyu76thgfsdertrty76545tyhgf345', 
     resave: false,              //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
     saveUninitialized: false,   //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
+
 app.use(csrfProtection); 
 
 

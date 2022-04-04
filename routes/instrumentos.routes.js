@@ -9,6 +9,7 @@ router.get('/nuevo', instrumentosController.get_nuevo);
 router.post('/nuevo', instrumentosController.post_nuevo);
 router.get('/', isAuth, instrumentosController.inicio);
 router.get('/:ID_instrumento', isAuth, instrumentosController.filtrar);   // Para filtrar los instrumentos
+router.get('/instrumentos/busqueda/:valor', isAuth, instrumentosController.buscar);
 router.use('/', isAuth, instrumentosController.error);
 
 module.exports = router;
