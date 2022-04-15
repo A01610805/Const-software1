@@ -10,9 +10,10 @@ exports.get_nuevo = (request, response, next) => {
 }
 
 exports.post_nuevo = (request, response, next) => {
-    const instrumento = new Instrumento(request.body.nombre, request.body.tipo, request.body.descripcion, request.body.imagen);   // Se crea un nuevo objeto "instrumento" con el nombre ingresado por el usuario
+    const instrumento = new Instrumento(request.body.nombre, request.body.tipo, request.body.descripcion, request.file.filename);   // Se crea un nuevo objeto "instrumento" con el nombre ingresado por el usuario
     instrumento.save()
         .then(() => {
+            console.log(request.file.filename);
             response.setHeader('Set-Cookie', 'ultimo_instrumento='+instrumento.nombre+'; HttpOnly');
             response.redirect('/musica/instrumentos');
         })
@@ -68,6 +69,11 @@ exports.buscar = (request, response, next) => {
         console.log(err);
     });
 }
+
+exports.postArchivo = (request, response, next) => {
+    const ruta_archivo = request.file.path;
+};
+
 
 /*
  .then(([rows, fieldData]) => {   // Lo que queremos que ocurra cuando la promesa se cumple

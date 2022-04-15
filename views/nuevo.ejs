@@ -2,7 +2,7 @@
 
 <h3 id="guitarras">Este sitio es para ingresar nuevos instrumentos</h3>
 <br><br>
-<form action="nuevo" method="POST">
+<form action="nuevo" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_csrf" value="<%=csrfToken %>" > <!--Protección csrf-->
     <label for="nombre"><h6>Nombre del instrumento:</h6> </label>
     <input type="text"id="nombre" name="nombre" placeholder="Violín">
@@ -12,10 +12,12 @@
 
     <label for="descripcion"><h6>Descripción:</h6> </label>
     <input type="text"id="descripcion" name="descripcion" placeholder="Es un instrumento...">
+    <br>
 
-    <label for="imagen"><h6>Imagen:</h6> </label>
-    <input type="text"id="imagen" name="imagen" placeholder="link de la imagen">
+    <label for="imagen">Imagen:   </label>
+    <input type="file" id="imagen" name="imagen">
     <br><br>
+
     <input type="submit" value="Enviar">
 </form>
 <br><br>
