@@ -1,4 +1,5 @@
 const path = require('path');
+const axios = require('axios');
 const Instrumento = require('../models/instrumento');       // para poder acceder al archivo donde guardamos los instrumentos
 const User = require('../models/user');
 
@@ -74,6 +75,32 @@ exports.postArchivo = (request, response, next) => {
     const ruta_archivo = request.file.path;
 };
 
+exports.GraficaCrypto = (request, response, next) => {
+
+    response = null;
+    new Promise(async (resolve, reject) => {
+    try {
+        response = await axios.get('https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
+        headers: {
+            'X-CMC_PRO_API_KEY': '9891736d-3f64-4f54-87b3-e3b1358c7d34',
+        },
+        });
+    } catch(ex) {
+        response = null;
+        // error
+        console.log(ex);
+        console.log("error");
+        reject(ex);
+    }
+    if (response) {
+        // success
+        const json = response.data;
+        console.log(json);
+        console.log("exito");
+        resolve(json);
+    }
+    });
+}
 
 /*
  .then(([rows, fieldData]) => {   // Lo que queremos que ocurra cuando la promesa se cumple
